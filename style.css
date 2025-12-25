@@ -1,0 +1,1224 @@
+:root {
+    --primary-pink: #FEE1E8;
+    --secondary-pink: #F3C4D0;
+    --dark-pink: #D48C9D;
+    --text-dark: #4A4A4A;
+    --text-light: #7A7A7A;
+    --white: #FFFFFF;
+    --bg-light: #FFFCFD;
+    --font-main: 'Prompt', sans-serif;
+    --shadow: 0 4px 15px rgba(243, 196, 208, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    backdrop-filter: blur(5px);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--dark-pink);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 400;
+    color: var(--text-dark);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--dark-pink);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+}
+
+/* Base Buttons */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--secondary-pink);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-pink);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Hero Section */
+.hero {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    background: linear-gradient(135deg, #fff 0%, var(--bg-light) 100%);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply;
+    /* Helps integrate white bg images */
+}
+
+/* Pregnancy Care Section */
+.pregnancy-care {
+    padding: 80px 0;
+    background-color: var(--primary-pink);
+    background: linear-gradient(to right, var(--bg-light), var(--primary-pink));
+}
+
+.pregnancy-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.pregnancy-list {
+    margin-top: 2rem;
+}
+
+.pregnancy-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.pregnancy-list li i {
+    color: var(--secondary-pink);
+    /* Make icons specific color if needed, or white if on pink bg? No, dark text is better for readability on light pink */
+    color: #D48C9D;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.pregnancy-image-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .pregnancy-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Services */
+.services {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: var(--dark-pink);
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--bg-light);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(254, 225, 232, 0.3);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    background: var(--white);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-pink);
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.service-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background-color: var(--primary-pink);
+    background: linear-gradient(to right, var(--bg-light), var(--primary-pink));
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.about-image-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    border: 2px dashed var(--secondary-pink);
+    color: var(--text-light);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background-color: var(--primary-pink);
+    background: linear-gradient(to right, var(--bg-light), var(--primary-pink));
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.contact-info {
+    padding: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.info-item i {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-pink);
+    color: var(--dark-pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.social-links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: var(--bg-light);
+    color: var(--dark-pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--secondary-pink);
+    color: var(--white);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-family: var(--font-main);
+    background: var(--bg-light);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--secondary-pink);
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-dark);
+    color: var(--white);
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Appointment Section */
+.appointment {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.appointment-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(254, 225, 232, 0.5);
+}
+
+.appointment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.form-group input {
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    background: #FFFCFD;
+}
+
+.form-group input:focus {
+    border-color: var(--secondary-pink);
+    background: var(--white);
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-wrapper {
+        padding: 2rem;
+    }
+}
+
+.appointment-form select,
+.appointment-form textarea {
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    background: #FFFCFD;
+    width: 100%;
+}
+
+.appointment-form select:focus,
+.appointment-form textarea:focus {
+    border-color: var(--secondary-pink);
+    background: var(--white);
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    accent-color: var(--secondary-pink);
+}
+
+.checkbox-group label {
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+
+/* ========================================= */
+/* ส่วนที่กดหัวข้อแล้วมันดูเลยๆ*/
+/* ========================================= */
+
+/* แก้ตัวเลขอันนี้ scroll-margin-top: 100px */
+section {
+    scroll-margin-top: 100px;
+}
+
+/* ========================================= */
+
+/* เอฟเฟกต์ชี้เมาส์: รูปขยาย + ล้ำกรอบนิดหน่อย */
+.hero-image {
+    position: relative;
+    border-radius: 20px;
+}
+
+.hero-image img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 20px;
+}
+
+.hero-image:hover img {
+    transform: scale(1.08);
+    /* ขยาย + ทะลุกรอบนิดหน่อย */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+}
+
+/*เส้นทางฝากครรภ์*/
+/* ====== SECTION ====== */
+#pregnancy-journey {
+    padding: 80px 20px;
+    background: #f9fafb;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 60px;
+    color: #333;
+}
+
+/* ====== TIMELINE ====== */
+.journey {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* เส้นตรงกลาง */
+.journey::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: #e5e7eb;
+    transform: translateX(-50%);
+}
+
+/* เส้นคั่นระหว่างขั้น */
+.journey-line {
+    height: 60px;
+}
+
+/* ====== ITEM ====== */
+.journey-item {
+    display: flex;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.journey-item.left {
+    justify-content: flex-start;
+}
+
+.journey-item.right {
+    justify-content: flex-end;
+}
+
+/* ====== แก้ตัวหนังสือในกล่อง ====== */
+.journey-box {
+    width: 360px;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: left;
+    /*ตรงนี้*/
+}
+
+/* จุดเชื่อมกับเส้น */
+/* ===== Timeline Wrapper ===== */
+.journey {
+    position: relative;
+    margin-top: 60px;
+    padding: 40px 0;
+}
+
+/* เส้นตั้งกลาง */
+.journey::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: #e6a5ad;
+    transform: translateX(-50%);
+}
+
+/* ===== Item ===== */
+.journey-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+/* ซ้าย */
+.journey-item.left {
+    left: 0;
+    text-align: right;
+}
+
+/* ขวา */
+.journey-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* ===== จุดวงกลม ===== */
+.journey-item::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 3px solid #e6a5ad;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.journey-item.left::before {
+    right: -7px;
+}
+
+.journey-item.right::before {
+    left: -7px;
+}
+
+/* ===== กล่องเนื้อหา ===== */
+.journey-box {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 28px 32px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* hover ขยาย + ล้ำเส้น */
+.journey-box:hover {
+    transform: scale(1.04);
+    z-index: 5;
+}
+
+/* ===== Checklist ===== */
+.journey-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.journey-box li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #374151;
+    line-height: 1.6;
+}
+
+/* ✓ */
+.journey-box li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #e05a7a;
+    font-weight: bold;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .journey::before {
+        left: 20px;
+    }
+
+    .journey-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 20px;
+    }
+
+    .journey-item.left,
+    .journey-item.right {
+        left: 0;
+        text-align: left;
+    }
+
+    .journey-item::before {
+        left: 13px;
+    }
+}
+
+/*เส้นทางฝากครรภ์*/
+
+/* FAQ Section */
+.faq {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background: var(--bg-light);
+    border-radius: 15px;
+    border: 1px solid rgba(254, 225, 232, 0.5);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow);
+}
+
+.faq-item.active {
+    background: var(--white);
+    border-color: var(--secondary-pink);
+    box-shadow: var(--shadow);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+}
+
+
+/* Loading Spinner */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: var(--secondary-pink);
+    animation: spin 1s ease infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Success Checkmark */
+.checkmark-circle {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+
+}
+
+.checkmark-circle .background {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #28a745;
+    position: absolute;
+    animation: scaleIn 0.3s ease-out forwards;
+}
+
+.checkmark-circle .checkmark {
+    border-radius: 5px;
+}
+
+.checkmark-circle .checkmark:after {
+    position: absolute;
+    display: block;
+    content: "";
+    left: 20px;
+    top: 10px;
+    width: 15px;
+    height: 25px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    animation: checkmate 0.5s ease-in-out 0.3s forwards;
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes checkmate {
+    0% {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    50% {
+        opacity: 1;
+        width: 0;
+        height: 25px;
+    }
+
+    100% {
+        opacity: 1;
+        width: 10px;
+        height: 25px;
+    }
+}
+
+.faq-question h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.faq-question i {
+    color: var(--dark-pink);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 1.5rem;
+}
+
+.faq-item.active .faq-answer {
+    padding-bottom: 1.5rem;
+    /* max-height will be set by JS */
+}
+
+.faq-answer p {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    /* Glass effect on background */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 10px 20px rgba(243, 196, 208, 0.4);
+}
+
+.modal h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 2rem;
+}
+
+/* Custom Button Styles for Modal */
+.btn-address {
+    background-color: var(--secondary-pink);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-weight: 500;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-address:hover {
+    background-color: var(--dark-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(243, 196, 208, 0.4);
+    color: var(--white);
+}
+
+.btn-modal-primary {
+    background: linear-gradient(135deg, var(--dark-pink), #e07a90);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: none;
+    box-shadow: 0 4px 10px rgba(212, 140, 157, 0.3);
+}
+
+.btn-modal-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 140, 157, 0.4);
+    filter: brightness(1.05);
+}
+
+.btn-modal-secondary {
+    background: #f5f5f5;
+    color: #666;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    border: none;
+    flex: 1;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-modal-secondary:hover {
+    background: #e0e0e0;
+    color: #333;
+}
+
+/* สไตล์สำหรับ Popup Overlay */
+.modal-overlay {
+    display: none;
+    /* ซ่อนไว้เริ่มต้น */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    /* ทำพื้นหลังมัว */
+}
+
+/* กล่องสีขาวกลางจอ */
+.modal-card {
+    background-color: #fff;
+    margin: 15vh auto;
+    padding: 0;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    background-color: #D48C9D;
+    /* สีชมพูเดียวกับหัวข้อคุณ */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.close-modal {
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/*popup*/
+
+/*Line*/
+/* ปุ่มวงกลมขวาล่าง */
+#line-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #00b900;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+#line-widget:hover {
+    transform: scale(1.1);
+}
+
+#line-widget img {
+    width: 35px;
+    height: 35px;
+}
+
+/* หน้าต่าง Modal */
+#line-modal {
+    position: fixed;
+    bottom: 90px;
+    /* ให้อยู่เหนือปุ่มวงกลม */
+    right: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    overflow: hidden;
+    font-family: 'Kanit', sans-serif;
+    display: none;
+    /* ซ่อนไว้เริ่มต้น */
+}
+
+#line-modal.show {
+    display: block;
+    animation: fadeInUp 0.3s ease;
+}
+
+.modal-content {
+    padding: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+.qr-container img {
+    width: 180px;
+    margin: 15px 0;
+}
+
+.line-add-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00b900;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    gap: 10px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*line*/
