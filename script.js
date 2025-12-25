@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             data.timestamp = new Date().toISOString();
 
             // GOOGLE APPS SCRIPT WEB APP URL
-            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxvKrn2fjC0uDd7_QmenZX-TlnA9buDV7Vk_UWrfbAkqgl5GaCcPTBKtqDvPAO3rL1I/exec'; // REMEMBER TO UPDATE THIS
+            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz9pGleBY0pKN8KZ2hGCgsTgZAeGm1NfrN7tPcKRJdtzjzeOT89_DuKhnrB1GDhzjml/exec'; // REMEMBER TO UPDATE THIS
 
             const queryString = new URLSearchParams(data).toString();
 
