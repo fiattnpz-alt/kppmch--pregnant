@@ -407,7 +407,7 @@ footer {
         gap: 2rem;
     }
 
-    .nav-links {
+    .navbar .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
@@ -420,7 +420,7 @@ footer {
         text-align: center;
     }
 
-    .nav-links.active {
+    .navbar .nav-links.active {
         display: flex;
     }
 
