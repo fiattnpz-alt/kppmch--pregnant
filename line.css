@@ -1,0 +1,170 @@
+/* LINE Widget & Modal Styles */
+
+/* LINE Floating Widget Button */
+#line-widget {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 9999;
+}
+
+#line-widget:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+#line-widget img {
+    width: 42px;
+    height: 42px;
+    /* filter remove to show original colors */
+}
+
+/* LINE Modal Overlay */
+#line-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#line-modal.show {
+    opacity: 1;
+}
+
+#line-modal.hidden {
+    display: none;
+}
+
+/* LINE Modal Content */
+#line-modal .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+#line-modal.show .modal-content {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Close Button */
+#line-modal .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+#line-modal .close-btn:hover {
+    color: #333;
+}
+
+/* Modal Title */
+#line-modal h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+#line-modal p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+/* QR Code Container */
+#line-modal .qr-container {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+#line-modal .qr-container img {
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+}
+
+/* LINE Add Button */
+#line-modal .line-add-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #06C755;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+#line-modal .line-add-button:hover {
+    background: #05a647;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(6, 199, 85, 0.3);
+}
+
+#line-modal .line-add-button i {
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    #line-widget {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+
+    #line-widget img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #line-modal .modal-content {
+        padding: 2rem 1.5rem;
+    }
+
+    #line-modal .qr-container img {
+        width: 150px;
+        height: 150px;
+    }
+}

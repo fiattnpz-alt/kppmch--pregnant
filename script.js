@@ -33,9 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Simple Intersection Observer for Fade-in effects
+    // Enhanced Intersection Observer for Animations
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -47,24 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.service-card, .about-text, .hero-text, .hero-image').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    // Observe all elements with the animation class
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
         observer.observe(el);
     });
 
-    // Add visible class styles dynamically or rely on CSS classes being toggled
-    // Here we'll just set inline styles for simplicity in JS for the "visible" state if we don't have CSS classes
-    // But better to add a class. Let's add a style block for .visible
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(style);
+    // Remove the dynamic style injection as it's now handled by style_animations.css
     // FAQ Accordion
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {

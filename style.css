@@ -229,7 +229,7 @@ ul {
     border-radius: 20px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid rgba(254, 225, 232, 0.3);
+    border: 1px solid rgba(254, 225, 232, 0.8);
 }
 
 .service-card:hover {
@@ -1222,3 +1222,43 @@ section {
 }
 
 /*line*/
+
+/* Mobile Footer Alignment */
+@media (max-width: 768px) {
+    .pre-footer-info .container>div {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 20px !important;
+    }
+
+    .footer-links-container {
+        justify-content: flex-start !important;
+        width: 100%;
+        gap: 20px !important;
+        padding-left: 0 !important;
+    }
+
+    .footer-brand {
+        width: 100%;
+    }
+
+    /* Adjust specific text alignments within footer columns if needed */
+    .footer-links-container>div {
+        text-align: left !important;
+        min-width: auto !important;
+        width: 100%;
+        align-items: flex-start !important;
+    }
+
+    .footer-links-container>div p {
+        text-align: left !important;
+    }
+
+    .footer-links-container>div .nav-links {
+        justify-content: flex-start;
+    }
+
+    .footer-links-container>div div[style*="align-items: center"] {
+        align-items: flex-start !important;
+    }
+}
